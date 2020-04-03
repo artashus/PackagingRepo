@@ -1,1 +1,55 @@
 # PackagingRepo
+ 
+This repository contains sources for building the vsftpd.rpm package. Please, follow the instructions below to get started.
+ 
+##Install required packages
+
+Run the commands below to install packages required for building rpm packages
+
+```bash
+$ yum install rpm-build rpmdevtools
+```
+
+##Create build directory structure
+
+To setup the build environment on Centos7 go to users home directory and run the command below
+
+```bash
+$ rpmdev-setuptree
+```
+
+Make sure the directory was created succesfully
+
+```bash
+$ ls -l rpmbuild
+
+drwxr-xr-x 2 root root 6 Oct 25 03:09 BUILD
+drwxr-xr-x 2 root root 6 Oct 25 03:09 RPMS
+drwxr-xr-x 2 root root 6 Oct 25 03:09 SOURCES
+drwxr-xr-x 2 root root 6 Oct 25 03:09 SPECS
+drwxr-xr-x 2 root root 6 Oct 25 03:09 SRPMS
+```
+
+If the directory structure failed to create by the command above, you can manually create it
+
+```bash
+$ mkdir -p ~/rpmbuild/{BUILD,RPMS,SOURCES,SPECS,SRPMS,tmp}
+```
+
+##Install git
+
+Skip this step if you already have git set up on your Centos7 build environment
+
+```bash
+$ yum -y update
+$ yum install git
+```
+
+##Clone current git repo
+
+Click on the “Clone or download” button and copy the url of the repo. Run the command below to clone current remote repository to your local machine
+
+```bash
+$ git clone repo_url
+```
+##Copy source files to the build directory

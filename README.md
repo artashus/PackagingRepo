@@ -7,6 +7,7 @@ This repository contains sources for building the vsftpd.rpm package. Please, fo
 Run the commands below to install packages required for building rpm packages
 
 ```bash
+$ yum -y update
 $ yum install rpm-build rpmdevtools
 ```
 
@@ -41,7 +42,6 @@ $ mkdir -p ~/rpmbuild/{BUILD,RPMS,SOURCES,SPECS,SRPMS,tmp}
 Skip this step if you already have git set up on your Centos7 build environment
 
 ```bash
-$ yum -y update
 $ yum install git
 ```
 
@@ -64,6 +64,13 @@ Copy the .spec file to the ~/rpmbuild/SPECS directory
 
 ```bash
 $ cp vsftpd.spec ~/rpmbuild/SPECS
+```
+## Install package dependancies
+
+Install vsftpd package dependencies 
+
+```bash
+$ yum install -y pam-devel libcap-devel openssl-devel tcp_wrappers-devel
 ```
 
 ## Build your RPM

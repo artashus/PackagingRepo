@@ -1,5 +1,10 @@
 # PackagingRepo
  
+ 
+```puml
+A -> B
+```
+
 This repository contains sources for building the vsftpd.rpm package. Please, follow the instructions below to get started.
  
 ## Install required packages
